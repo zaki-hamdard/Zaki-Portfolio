@@ -6,6 +6,7 @@ html {
 :root {
   --primary-color: #8750f7;
   --secondary-color: #2a1454;
+  --secondary-bg-color: #18073a47;
   --header-background-color: #10203;
   --background-dark-color: #212529;
   --forground-color: #f6f3fc;
@@ -92,9 +93,15 @@ button {
 /* Utility Classes */
 .container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 4rem;
+}
+.wide-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .flex {
@@ -116,6 +123,12 @@ button {
   position: relative;
   overflow: hidden;
 }
+.button-transparent {
+  background-color: transparent;
+  color: var(--forground-color);
+  font-weight: 600;
+  transition: all 0.4s ease;
+}
 
 .button-primary {
   background-image: var(--variant-bg);
@@ -135,9 +148,21 @@ button {
   color: var(--primary-color);
   font-weight: 500;
   transition: all 0.4s ease;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 .button-outline:hover {
   background-color: var(--primary-color);
+  color: var(--forground-color);
+}
+.button-outline i {
+  color: var(--primary-color);
+  transition: all 0.4s ease;
+}
+.button-outline:hover i {
   color: var(--forground-color);
 }
 
@@ -195,6 +220,13 @@ button {
 }
 .circled-link:hover::after {
   transform: scale(1);
+}
+.circled-link i {
+  color: var(--primary-color);
+  transition: all 0.4s ease;
+}
+.circled-link:hover i {
+  color: var(--forground-color);
 }
 
 .text-gradient {
@@ -317,6 +349,10 @@ main {
 }
 
 /* Hero Section */
+.hero-wrapper {
+  background-color: var(--secondary-bg-color);
+  background-opacity: 0;
+}
 .hero-section {
   gap: 2rem;
   padding: 2.5rem 0;
@@ -354,4 +390,69 @@ main {
 }
 .call-to-action-wrapper {
   gap: 1rem;
+}
+
+/* Proof Section */
+.proof-container {
+  justify-content: space-between;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+.proof-item {
+  gap: 1rem;
+}
+/* End of proof Section */
+
+/* Quality Service Section */
+.section-spacing {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.section-description {
+  width: 80%;
+  text-align: center;
+}
+.quality-service-container {
+  gap: 1.5rem;
+}
+.quality-list {
+  padding: 2rem 0;
+}
+.quality-list-item {
+  position: relative;
+  padding: 2rem 1rem;
+  border-bottom: 1px solid var(--primary-color);
+  transition: background-color 0.4s ease;
+}
+
+.quality-list-item:hover {
+  background-color: var(--primary-color);
+}
+
+.right-arrow-container {
+  flex-grow: 0;
+  width: 10%;
+}
+.quality-item-info p {
+  width: 60%;
+}
+.quality-item-info .quality-item-title {
+  width: 40%;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+/* My recent works */
+.recent-works-container {
+  gap: 1rem;
+}
+.work-gallery {
+  flex-wrap: wrap;
+}
+.work-card {
+  padding: 1rem;
+  width: 45%;
+}
+.work-card img {
+  width: 100%;
 }
