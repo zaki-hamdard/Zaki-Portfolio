@@ -443,16 +443,99 @@ main {
 }
 
 /* My recent works */
+.recent-works-tab {
+  position: relative;
+}
 .recent-works-container {
   gap: 1rem;
 }
 .work-gallery {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  transition: all 0.3s ease-in-out;
   flex-wrap: wrap;
+  transform-origin: center;
+  min-height: 400px;
+  width: 100%;
+}
+.gallery-visible {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 .work-card {
+  position: relative;
   padding: 1rem;
   width: 45%;
 }
 .work-card img {
   width: 100%;
+  border-radius: 1rem;
+}
+.work-card-info-wrapper {
+  position: absolute;
+  bottom: 3%;
+  left: 0;
+  width: 100%;
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+}
+.work-card-info {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: var(--variant-bg);
+  padding: 1rem;
+  left: -5%;
+  border-radius: 1rem;
+  transition: all 0.4s ease;
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+.work-card:hover .work-card-info {
+  transform: translateY(0);
+  opacity: 1;
+}
+.work-card-text-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+.work-card-arrow-icon {
+  flex-grow: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.button-active-badge {
+  position: absolute;
+  background-image: var(--variant-bg);
+  background-size: 200%;
+  color: var(--forground-color);
+  font-weight: 600;
+  transition: all 0.4s ease;
+  min-width: 50px;
+  min-height: 30px;
+  border-radius: 3rem;
+  top: 0;
 }
