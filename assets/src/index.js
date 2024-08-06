@@ -55,6 +55,8 @@ const worksTabParent = document.querySelector(".recent-works-tab");
 const galleryEl = document.querySelector(".work-gallery");
 const badge = document.querySelector(".button-active-badge");
 
+//    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+
 // Functions
 const tabChangeFunction = (e) => {
   // place active badge
@@ -82,6 +84,39 @@ const tabChangeFunction = (e) => {
       cardEl.classList.add("work-card");
       const cardImg = document.createElement("img");
       cardImg.src = item.image;
+
+      const workCardInfoWrapper = document.createElement("div");
+      workCardInfoWrapper.classList.add("work-card-info-wrapper");
+
+      const workCardInfo = document.createElement("div");
+      workCardInfo.classList.add("work-card-info");
+
+      const workCardTextInfo = document.createElement("div");
+      workCardTextInfo.classList.add("work-card-text-info");
+
+      const h3 = document.createElement("h3");
+      h3.textContent = item.title;
+
+      const p = document.createElement("p");
+      p.textContent = item.description;
+
+      workCardTextInfo.appendChild(h3);
+      workCardTextInfo.appendChild(p);
+
+      const workCardArrowIcon = document.createElement("div");
+      workCardArrowIcon.classList.add("work-card-arrow-icon");
+
+      const icon = document.createElement("i");
+      icon.classList.add("fa", "fa-arrow-right", );
+      icon.setAttribute("aria-hidden", "true");
+
+      workCardArrowIcon.appendChild(icon);
+
+      workCardInfo.appendChild(workCardTextInfo);
+      workCardInfo.appendChild(workCardArrowIcon);
+
+      workCardInfoWrapper.appendChild(workCardInfo);
+      cardEl.appendChild(workCardInfoWrapper);
       cardEl.appendChild(cardImg);
       return cardEl;
     });
@@ -111,7 +146,7 @@ const placeActiveBadge = (e) => {
 
 // init function --> called in page load
 const init = () => {
-  // tabChangeFunction({ target: worksTabButtons[0] });
+  tabChangeFunction({ target: worksTabButtons[0] });
   placeActiveBadge({ target: worksTabButtons[0] });
 };
 

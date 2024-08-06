@@ -108,6 +108,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 .flex-col {
   display: flex;
@@ -450,6 +451,7 @@ main {
   gap: 1rem;
 }
 .work-gallery {
+  position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -458,6 +460,15 @@ main {
   transform-origin: center;
   min-height: 400px;
   width: 100%;
+}
+.gallery-bg-light {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  z-index: -1;
 }
 .gallery-visible {
   animation: fadeIn 0.5s ease-in-out;
@@ -525,6 +536,10 @@ main {
   justify-content: center;
   align-items: center;
   padding: 0.5rem;
+  transition: all 0.4s ease;
+}
+.work-card:hover .work-card-arrow-icon {
+  transform: rotate(345deg);
 }
 
 .button-active-badge {
@@ -538,4 +553,45 @@ main {
   min-height: 30px;
   border-radius: 3rem;
   top: 0;
+}
+
+/* End of My works section */
+
+/* Experience & Education Section */
+.exp-edu-section {
+  gap: 2rem;
+  align-items: flex-start;
+}
+.experience-section,
+.education-section {
+  flex-grow: 1;
+  gap: 1rem;
+}
+.experience-section {
+  align-items: flex-start;
+}
+.education-section {
+  align-items: flex-start;
+}
+.experience-card {
+  align-items: flex-start;
+  padding: 1rem;
+  gap: 0.5rem;
+  background: var(--secondary-bg-color);
+  width: 100%;
+  background-opacity: 0.5;
+  border-radius: 1rem;
+  transition: all 0.4s ease;
+}
+.experience-card:hover {
+  background: var(--primary-color);
+}
+
+.experience-card p:first-child {
+  transition: all 0.4s ease;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+.experience-card:hover p:first-child {
+  color: var(--forground-color);
 }
