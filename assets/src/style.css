@@ -10,6 +10,7 @@ html {
   --header-background-color: #10203;
   --background-dark-color: #212529;
   --forground-color: #f6f3fc;
+  --gray-color: #747779;
   --variant-bg: linear-gradient(
     to right,
     var(--secondary-color) 0%,
@@ -115,6 +116,20 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.flex-grow {
+  flex-grow: 1;
+  width: 100%;
+}
+.align-start {
+  align-items: flex-start;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+.gap-2 {
+  gap: 2rem;
 }
 /* button */
 .button {
@@ -410,7 +425,7 @@ main {
   padding-bottom: 4rem;
 }
 .section-description {
-  width: 80%;
+  width: 60%;
   text-align: center;
 }
 .quality-service-container {
@@ -595,3 +610,90 @@ main {
 .experience-card:hover p:first-child {
   color: var(--forground-color);
 }
+
+/* End of styles for experience+ education section */
+
+/* start of styles fro skills section */
+.skills-cards-wrapper {
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.5rem 0;
+}
+.skill-card {
+  gap: 0.5rem;
+}
+.skill-card-body {
+  padding: 2rem 3rem;
+  gap: 0.5rem;
+  background: var(--secondary-bg-color);
+  border-radius: 2rem;
+  transition: all 0.4s ease;
+  border: 1px solid transparent;
+}
+.skill-card-body img {
+  transition: all 0.4s ease;
+  filter: grayscale(100%);
+}
+.skill-card-body p {
+  font-weight: bold;
+  color: var(--gray-color);
+  transition: all 0.4s ease;
+}
+.skill-card:hover .skill-card-body {
+  background: #2a1454;
+  border: 1px solid var(--primary-color);
+}
+.skill-card:hover .skill-card-body img {
+  filter: grayscale(0%);
+}
+.skill-card:hover .skill-card-body p {
+  color: var(--primary-color);
+}
+
+/* End of styles for skills section */
+
+/* Start of clients stories section */
+.client-stories-title {
+  align-items: flex-start;
+}
+.client-stories-title p {
+  width: 100%;
+  text-align: left;
+}
+
+/* start of carousel */
+.carousel-container {
+  border: 1px solid var(--primary-color);
+  min-height: 300px;
+  overflow: hidden;
+}
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+  transition: all 1s ease;
+  width: 100%;
+  align-self: stretch;
+}
+.carousel-card {
+  min-width: 50%;
+  border: 1px solid var(--primary-color);
+  align-self: stretch;
+}
+.carousel-pagination {
+  padding: 1rem;
+  gap: 0.8rem;
+}
+.carousel-pagination-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  outline: none;
+  border: 0;
+}
+.carousel-pagination-dot.active {
+  background: var(--primary-color);
+}
+/* end of carousel */
+/* End of clients stories section */
