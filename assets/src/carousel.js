@@ -8,6 +8,16 @@ const cardsAtOnce = 2;
 // next Button click handler
 const nextSlideHandler = () => {
   const currentSlide = track.querySelector(".current-slide");
+  const currentSlideTriangles = currentSlide.querySelectorAll(".triangle");
+  const nextSlideTriangles =
+    currentSlide.nextElementSibling.querySelectorAll(".triangle");
+  console.log(currentSlideTriangles);
+  currentSlideTriangles.forEach((triangle) => {
+    triangle.style.transform = "rotate(0deg)";
+  });
+  nextSlideTriangles.forEach((triangle) => {
+    triangle.style.transform = "rotate(0deg)";
+  });
   const currentIndex = slides.indexOf(currentSlide) + 1;
   const slidesLength = slides.length;
 

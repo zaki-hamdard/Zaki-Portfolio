@@ -662,8 +662,10 @@ main {
 }
 
 /* start of carousel */
+.carousel-container-outer {
+  width: 50%;
+}
 .carousel-container {
-  border: 1px solid var(--primary-color);
   min-height: 300px;
   overflow: hidden;
 }
@@ -678,7 +680,8 @@ main {
 }
 .carousel-card {
   min-width: 50%;
-  border: 1px solid var(--primary-color);
+  padding: 1rem;
+  background: var(--secondary-bg-color);
   align-self: stretch;
 }
 .carousel-pagination {
@@ -695,5 +698,35 @@ main {
 .carousel-pagination-dot.active {
   background: var(--primary-color);
 }
+
+.carousel-card-header {
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.carousel-card-header img:last-child {
+  border-radius: 0.4rem 1rem 0.4rem 100%;
+}
+
+.triangles-wrapper {
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.left-triangle,
+.right-triangle {
+  width: 15px;
+  height: 25px;
+  transition: all 0.4s ease;
+  background-color: var(--primary-color);
+}
+.left-triangle {
+  clip-path: polygon(100% 0, 100% 100%, 0 50%);
+  transform: rotate(45deg);
+}
+.right-triangle {
+  transform: rotate(-45deg);
+  clip-path: polygon(0 0, 0% 100%, 100% 50%);
+}
+
 /* end of carousel */
 /* End of clients stories section */
