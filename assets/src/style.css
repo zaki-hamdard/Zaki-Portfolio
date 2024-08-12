@@ -124,12 +124,18 @@ button {
 .align-start {
   align-items: flex-start;
 }
+.justify-start {
+  justify-content: flex-start;
+}
 
 .gap-1 {
   gap: 1rem;
 }
 .gap-2 {
   gap: 2rem;
+}
+.bold {
+  font-weight: 600;
 }
 /* button */
 .button {
@@ -730,3 +736,35 @@ main {
 
 /* end of carousel */
 /* End of clients stories section */
+
+/* Contact me section */
+.left-contact-info {
+  background: var(--secondary-bg-color);
+  padding: 1rem 1.5rem;
+  border-radius: 0.4rem;
+}
+
+.left-contact-info p {
+  text-align: left;
+  width: 90%;
+}
+.contact-form {
+  width: 100%;
+}
+.contact-form fieldset {
+  display: flex;
+  border: none;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  flex: 1;
+  padding: 1rem;
+  outline: 0;
+  background-color: var(--background-dark-color);
+  border: 1px solid var(--gray-color);
+  border-radius: 0.4rem;
+}
+
+/* End Contact me section */
