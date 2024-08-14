@@ -74,6 +74,10 @@ a,
 button {
   cursor: pointer;
 }
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
 
 .text-xs {
   font-size: 0.63rem; // 10px
@@ -765,6 +769,17 @@ main {
   background-color: var(--background-dark-color);
   border: 1px solid var(--gray-color);
   border-radius: 0.4rem;
+}
+
+.alert {
+  max-width: 300px;
+  margin: 0.5rem auto;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  background: green;
+  transition: all 0.4s ease;
+  transform: translateY(-100%);
+  opacity: 0;
 }
 
 /* End Contact me section */

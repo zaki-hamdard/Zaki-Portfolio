@@ -11,7 +11,6 @@ const nextSlideHandler = () => {
   const currentSlideTriangles = currentSlide.querySelectorAll(".triangle");
   const nextSlideTriangles =
     currentSlide.nextElementSibling.querySelectorAll(".triangle");
-  console.log(currentSlideTriangles);
   currentSlideTriangles.forEach((triangle) => {
     triangle.style.transform = "rotate(0deg)";
   });

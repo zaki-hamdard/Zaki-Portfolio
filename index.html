@@ -456,6 +456,7 @@
 
       <!-- start of contact section  -->
       <section class="container section-spacing">
+        <div class="alert">Your email have been sent successfully! </div>
         <div class="flex gap-2">
           <div class="flex-col gap-1 left-contact-info">
             <div class="flex-col gap-1 align-start">
@@ -471,11 +472,13 @@
                   type="text"
                   placeholder="First Name"
                   class="input-field"
+                  required
                 />
                 <input
                   type="text"
                   placeholder="Last Name"
                   class="input-field"
+                  required
                 />
               </fieldset>
               <fieldset class="flex gap-1">
@@ -483,6 +486,7 @@
                   type="email"
                   placeholder="Email Address"
                   class="input-field"
+                  required
                 />
                 <input
                   type="text"
@@ -491,7 +495,7 @@
                 />
               </fieldset>
               <fieldset class="flex gap-1">
-                <select>
+                <select required>
                   <option value="2">Service 1</option>
                   <option value="3">Service 2</option>
                   <option value="4">Service 3</option>
@@ -499,12 +503,13 @@
               </fieldset>
               <fieldset class="flex gap-1">
                 <textarea
+                 required
                   rows="10"
                   placeholder="Message"
                   class="input-field"
                 ></textarea>
               </fieldset>
-              <button class="button button-primary" type="submit">
+              <button class="button button-primary submit-button" type="submit">
                 Submit
               </button>
             </form>
@@ -550,4 +555,15 @@
 
   <script src="./assets/src/index.js"></script>
   <script src="./assets/src/carousel.js"></script>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "CHaBQTP6VQc-7yloB",
+      });
+   })();
+</script>
+  <script src="./assets/src/contact.js"></script>
 </html>
