@@ -43,6 +43,37 @@
           <a class="button button-primary">Hire me</a>
         </li>
       </ul>
+      <div class="flex gap-1 justify-end mobile-buttons">
+        <a class="button button-primary">Hire me</a>
+        <button class="menu-button">
+          <span></span>
+         </button>
+      </div>
+
+      <nav class="mobile-nav">
+      
+        <ul class="flex flex-col mobile-menu">
+          <li>
+            <a class="underlined-link">Services</a>
+          </li>
+          <li>
+            <a class="underlined-link">Works</a>
+          </li>
+          <li>
+            <a class="underlined-link">Resume</a>
+          </li>
+          <li>
+            <a class="underlined-link">Skills</a>
+          </li>
+          <li>
+            <a class="underlined-link">Testimonials</a>
+          </li>
+          <li>
+            <a class="underlined-link">Contact</a>
+          </li>
+
+        </ul>
+      </nav>
       <!-- menu -->
     </header>
     <main>
@@ -328,7 +359,7 @@
 
       <!-- Start of Client Stories -->
       <section class="container">
-        <div class="section-spacing flex gap-1 align-start">
+        <div class="section-spacing flex gap-1 align-start client-stories-wrapper">
           <div class="flex flex-grow">
             <div class="flex-col client-stories-title">
               <h2 class="text-gradient">My Client's Stories</h2>
@@ -457,7 +488,7 @@
       <!-- start of contact section  -->
       <section class="container section-spacing">
         <div class="alert">Your email have been sent successfully! </div>
-        <div class="flex gap-2">
+        <div class="flex gap-2 contact-wrapper">
           <div class="flex-col gap-1 left-contact-info">
             <div class="flex-col gap-1 align-start">
               <h2 class="text-gradient">Let’s work together!</h2>
@@ -544,7 +575,7 @@
       </section>
       <!-- End of Contact Section -->
     </main>
-    <footer>footer of the website</footer>
+    <footer class="flex">Made with Love for Zaki ❤️ </footer>
 
     <!-- lightings -->
     <!-- top right corner light-->
@@ -558,12 +589,6 @@
   <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init({
-        publicKey: "CHaBQTP6VQc-7yloB",
-      });
-   })();
-</script>
+
   <script src="./assets/src/contact.js"></script>
 </html>

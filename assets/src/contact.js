@@ -2,25 +2,25 @@ const submitButton = document.querySelector(".submit-button");
 const form = document.querySelector(".contact-form");
 const alertDiv = document.querySelector(".alert");
 
-const SERVICE_ID = "service_q42awk8";
-const SEND_EMAIL_TO_USER_TEMP = "template_dvvgj0s";
-const SEND_EMAIL_TO_ME_TEMP = "template_1q2z5x9";
+const SERVICE_ID = "service_wdx9rmr";
+// const SEND_EMAIL_TO_USER_TEMP = "template_dvvgj0s";
+const SEND_EMAIL_TO_ME_TEMP = "template_v6yc56d";
 
 const emailJSSendEmail = async (data, templateId) =>
   emailjs.send(SERVICE_ID, templateId, data);
 
-const sendEmailToUser = async (userFullName, userEmail) => {
-  const templateParams = {
-    to_name: userFullName,
-    user_email: userEmail,
-    reply_to: "replytobaqir@gmail.com",
-  };
-  try {
-    await emailJSSendEmail(templateParams, SEND_EMAIL_TO_USER_TEMP);
-    alertDiv.style.opacity = 1;
-    alertDiv.style.transform = "translateY(0)";
-  } catch (error) {}
-};
+// const sendEmailToUser = async (userFullName, userEmail) => {
+//   const templateParams = {
+//     to_name: userFullName,
+//     user_email: userEmail,
+//     reply_to: "replytobaqir@gmail.com",
+//   };
+//   try {
+//     await emailJSSendEmail(templateParams, SEND_EMAIL_TO_USER_TEMP);
+//     alertDiv.style.opacity = 1;
+//     alertDiv.style.transform = "translateY(0)";
+//   } catch (error) {}
+// };
 
 const sendEmailToMe = async (
   userFullName,
@@ -30,12 +30,13 @@ const sendEmailToMe = async (
   categoryOfDiscuss
 ) => {
   const templateParams = {
-    to_name: userFullName,
+    from_name: userFullName,
     message: userMessage,
-    user_email: userEmail,
-    user_phone: userPhone,
+    from_email: userEmail,
+    from_phone: userPhone,
+    owner_email:"",
     category_of_discuss: categoryOfDiscuss,
-    reply_to: "replytobaqir@gmail.com",
+    reply_to: "replytozaki@gmail.com",
   };
 
   try {
@@ -64,5 +65,10 @@ form.addEventListener("submit", async (e) => {
 
   await sendEmailToUser(FullName, email);
   //   await sendEmailToMe(FullName, email, phone, message, subject);
-
 });
+
+(function () {
+  emailjs.init({
+    publicKey: "CHaBQTP6VQc-7yloB",
+  });
+})();

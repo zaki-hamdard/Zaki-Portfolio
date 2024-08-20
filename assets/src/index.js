@@ -54,6 +54,7 @@ const worksTabButtons = document.querySelectorAll(".recent-works-tab button");
 const worksTabParent = document.querySelector(".recent-works-tab");
 const galleryEl = document.querySelector(".work-gallery");
 const badge = document.querySelector(".button-active-badge");
+const menuBtn = document.querySelector(".menu-button");
 
 //    <i class="fa fa-arrow-right" aria-hidden="true"></i>
 
@@ -107,7 +108,7 @@ const tabChangeFunction = (e) => {
       workCardArrowIcon.classList.add("work-card-arrow-icon");
 
       const icon = document.createElement("i");
-      icon.classList.add("fa", "fa-arrow-right", );
+      icon.classList.add("fa", "fa-arrow-right");
       icon.setAttribute("aria-hidden", "true");
 
       workCardArrowIcon.appendChild(icon);
@@ -150,8 +151,11 @@ const init = () => {
   placeActiveBadge({ target: worksTabButtons[0] });
 };
 
+// event listener for menu button
+menuBtn.addEventListener("click", () => {
+  const mobileNav = document.querySelector(".mobile-nav");
+  menuBtn.classList.toggle("active");
+  mobileNav.classList.toggle("active");
+});
+
 init();
-
-
-
-
